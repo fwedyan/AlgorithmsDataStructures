@@ -20,6 +20,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from .credit_card import CreditCard
+import random
 
 class PredatoryCreditCard(CreditCard):
   """An extension to CreditCard that compounds interest and fees."""
@@ -55,3 +56,14 @@ class PredatoryCreditCard(CreditCard):
       # if positive balance, convert APR to monthly multiplicative factor
       monthly_factor = pow(1 + self._apr, 1/12)
       self._balance *= monthly_factor
+      
+  def createList(lower,upper,size):
+    list = []
+    for i in range(0,size):
+        n= random.randint(lower,upper)
+        list.append(n)
+    return list
+
+if __name__ == '__main__':
+    list1=createList(1,6,5)
+    
