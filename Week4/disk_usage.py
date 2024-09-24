@@ -29,5 +29,7 @@ def disk_usage(path):
       childpath = os.path.join(path, filename)   # compose full path to child
       total += disk_usage(childpath)             # add child's usage to total
 
-  print ('{0:<7}'.format(total), path)           # descriptive output (optional)
+ # print ('{0:<7}'.format(total), path)           # descriptive output (optional)
   return total                                   # return the grand total
+
+print('total = ', disk_usage(r"c:\bib"))

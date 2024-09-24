@@ -26,6 +26,9 @@ def power(x, n):
   else:
     partial = power(x, n // 2)          # rely on truncated division
     result = partial * partial
-    if n % 2 == 1:                      # if n odd, include extra factor of x
+    # is there a fatser way to check if n is odd?
+    if n & 1 == 1:                      # if n odd, include extra factor of x
       result *= x                       
     return result
+
+print(power(2,3))
