@@ -19,12 +19,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-def insertion_sort(A):
-  """Sort list of comparable elements into nondecreasing order."""
-  for k in range(1, len(A)):         # from 1 to n-1
-    cur = A[k]                       # current element to be inserted
-    j = k                            # find correct index j for current
-    while j > 0 and A[j-1] > cur:    # element A[j-1] must be after current
-      A[j] = A[j-1]
-      j -= 1
-    A[j] = cur                       # cur is now in the right place
+from ds.stacks.ArrayStack import ArrayStack
+
+def reverse_file(filename):
+  """Overwrite given file with its contents line-by-line reversed."""
+  S = ArrayStack()
+  original = open(filename)
+  for line in original:
+    S.push(line.rstrip('\n'))     # we will re-insert newlines when writing
+  original.close()
+
+  # now we overwrite with contents in LIFO order
+  output = open(filename, 'w')    # reopening file overwrites original
+  while not S.is_empty():
+    output.write(S.pop() + '\n')  # re-insert newline characters
+  output.close()
+
+  
