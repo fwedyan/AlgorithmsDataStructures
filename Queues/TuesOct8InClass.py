@@ -5,16 +5,28 @@ Created on Tue Oct  8 11:23:28 2024
 @author: fwedyan
 """
 from array_queue import ArrayQueue
+from Stacks.array_stack import ArrayStack
+from QueueExamples import printQueue
 
 ''' Print the queue in reverse order, from tail to head'''
 def printReverse(q:ArrayQueue):
-   pass
+   tempStack =ArrayStack ()
+   tempQueue = ArrayQueue()
+   while not q.is_empty():
+       tempStack.push(q.first())
+       tempQueue.enqueue(q.dequeue())
+   while not tempQueue.is_empty():
+       q.enqueue(tempQueue.dequeue())
+       print(tempStack.pop(), end = ' ')
+       
+   print()
 
 ''' Write a function that merges two given queues element 
 by element. The created queue is then returned by the
- function
- ex: q1 = [1,2,3,4], q2 = [5,6,7]
- result = [1,5,2,6,3,7,4]
+ function. Both given two queues will be empty after
+ calling the function
+ ex: q1 = [1,2,3,4,10], q2 = [5,6,7]
+ result = [1,5,2,6,3,7,4,10]
  
  '''
 def merge(q1:ArrayQueue, q2:ArrayQueue ):
@@ -33,4 +45,20 @@ be lost
  result [1,3,5,7], [2,4,6]'''
 def split(q:ArrayQueue):
      pass
- 
+
+if __name__ == '__main__':      
+    q  = ArrayQueue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+    q.enqueue(4)
+    q.enqueue(10)
+    
+    q2 = ArrayQueue()
+    q2.enqueue(5)
+    q2.enqueue(6)
+    q2.enqueue(7)
+    
+    printReverse(q)
+    printReverse(q)
+
