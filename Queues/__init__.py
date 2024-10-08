@@ -1,1 +1,1 @@
-__all__ = ['array_queue']
+__all__ = ['array_queue', 'QueueExamples']

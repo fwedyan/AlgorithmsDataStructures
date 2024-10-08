@@ -1,9 +1,23 @@
 from array_queue import ArrayQueue
 
+''' a function to apply round robin'''
+def roundRobin(q:ArrayQueue, slice:int):
+    pass
+
 ''' duplciate each queue entry
 example: a,b,c--> a,a, b,b,c,c'''
 def duplicateQueueEntries(q:ArrayQueue):
-   pass    
+   copy1 = ArrayQueue()
+   copy2 = ArrayQueue()
+   while not q.is_empty():
+      copy1.enqueue(q.first())
+      copy2.enqueue(q.first())
+      q.dequeue()
+   while not copy1.is_empty():
+       q.enqueue(copy1.dequeue())
+       q.enqueue(copy2.dequeue())
+       
+        
 
 ''' duplicate the queue 
 example: a,b,c --> a,b,c,a,b,c
@@ -38,9 +52,9 @@ q = ArrayQueue()
 q.enqueue('a')
 q.enqueue('b')
 q.enqueue('c')
-duplicateQueue(q)
+#duplicateQueue(q)
+duplicateQueueEntries(q)
 printQueue(q)
-duplicateQueue(q)
-
+duplicateQueueEntries(q)
 printQueue(q)
 #print(q.is_empty())
