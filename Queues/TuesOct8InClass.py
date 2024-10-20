@@ -30,8 +30,16 @@ by element. The created queue is then returned by the
  
  '''
 def merge(q1:ArrayQueue, q2:ArrayQueue ):
-    pass
-
+    result = ArrayQueue()
+    while not q1.is_empty() and not q2.is_empty():
+        result.enqueue(q1.dequeue())
+        result.enqueue(q2.dequeue())
+    while not q1.is_empty():
+        result.enqueue(q1.dequeue())
+    while not q2.is_empty():
+         result.enqueue(q2.dequeue())
+    return result     
+         
 '''Write a function to find the highest integer value in
  a queue. the function throws an exception when the queue
  has no intgeres at all.'''
@@ -44,8 +52,9 @@ be lost
  ex:  q = [1,2,3,4,5,6,7]
  result [1,3,5,7], [2,4,6]'''
 def split(q:ArrayQueue):
-     pass
-
+     q1 = ArrayQueue()
+     q2 = ArrayQueue()
+     
 if __name__ == '__main__':      
     q  = ArrayQueue()
     q.enqueue(1)
@@ -59,6 +68,8 @@ if __name__ == '__main__':
     q2.enqueue(6)
     q2.enqueue(7)
     
-    printReverse(q)
-    printReverse(q)
+   # printReverse(q)
+   # printReverse(q)
+    res = merge(q,q2)
+    printQueue(res)
 

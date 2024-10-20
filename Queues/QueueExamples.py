@@ -38,7 +38,7 @@ def duplicateQueue(q:ArrayQueue):
 ''' printing the queue, starting from head(front)'''
 def printQueue(q:ArrayQueue()):
     tempQ = ArrayQueue()
-    print("starting from the fron: ", end = ' ')
+    print("starting from the front: ", end = ' ')
     while not q.is_empty():
        tempQ.enqueue(q.first())
        print(q.dequeue(), end = ' ') 
