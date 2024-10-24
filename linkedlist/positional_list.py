@@ -24,7 +24,7 @@ from .doubly_linked_base import _DoublyLinkedBase
 class PositionalList(_DoublyLinkedBase):
   """A sequential container of elements allowing positional access."""
 
-  #-------------------------- nested Position class --------------------------
+  #-------------------------- Inner Position class --------------------------
   class Position:
     """An abstraction representing the location of a single element.
 

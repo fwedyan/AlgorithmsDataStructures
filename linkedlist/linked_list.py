@@ -4,6 +4,7 @@ class LinkedList:
         def __init__(self, element, next):
             self._element = element
             self._next = next
+            
     def __init__(self):
         self._head = None
         self._tail = None
@@ -65,6 +66,20 @@ class LinkedList:
         self._size -= 1
         return e
 
+    def middle(self):
+        ''' get the middle of the list'''
+        if self.is_empty():
+            print('List is empty')
+            return
+        p = self._head
+        i = 1
+        
+        while i< self.__len__()/2:
+            p = p._next
+            i+=1
+        return p._element
+    
+        
     # SECTION 2 QUEUE LIST ADT
     # PART FIVE INSERT TAIL we already have
     # PART SIX REMOVE HEAD we already have

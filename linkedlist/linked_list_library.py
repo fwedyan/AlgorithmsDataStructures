@@ -19,6 +19,7 @@ def printList(llist:ll.LinkedList):
     
 '''implement at home!, reverse a given list'''
 def reverseList(llist:ll.LinkedList()):
+    # use a stack
     pass
 
 
@@ -30,18 +31,24 @@ if __name__ == "__main__":
     my_list.insert_first(5)
     my_list.insert_first(7)
     my_list.insert_first(9)
+    my_list.insert_first(11)
+    my_list.insert_first(13)
+    my_list.insert_first(15)    
 
     printList(my_list)
+    print(my_list.middle())
 
-    # Test deleting
-    print("Deleted Head: ", my_list.remove_head())
-    printList(my_list)
-
-    # insert on tail
-    print("Insert (append) 11 on Tail")
-    my_list.insert_tail(11)
-    printList(my_list)
-
-    # delete tail
-    print("Deleted Tail: ", my_list.remove_tail())
-    printList(my_list)
+# =============================================================================
+#     # Test deleting
+#     print("Deleted Head: ", my_list.remove_head())
+#     printList(my_list)
+# 
+#     # insert on tail
+#     print("Insert (append) 11 on Tail")
+#     my_list.insert_tail(11)
+#     printList(my_list)
+# 
+#     # delete tail
+#     print("Deleted Tail: ", my_list.remove_tail())
+#     printList(my_list)
+# =============================================================================
