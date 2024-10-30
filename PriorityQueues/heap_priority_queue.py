@@ -20,7 +20,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from .priority_queue_base import PriorityQueueBase
-from ..exceptions import Empty
+from .priority_queue_base import Empty
 
 class HeapPriorityQueue(PriorityQueueBase): # base class defines _Item
   """A min-oriented priority queue implemented with a binary heap."""
