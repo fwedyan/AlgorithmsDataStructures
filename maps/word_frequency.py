@@ -24,6 +24,7 @@ filename = sys.argv[1]
 
 freq = {}
 for piece in open(filename).read().lower().split():
+#for piece in open("sonnet116.txt").read().lower().split(): if you don't want to use commandline
   # only consider alphabetic characters within this piece
   word = ''.join(c for c in piece if c.isalpha())
   if word:                                # require at least one alphabetic character
