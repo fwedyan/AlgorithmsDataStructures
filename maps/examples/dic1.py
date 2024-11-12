@@ -18,3 +18,4 @@ if 'a' in dict:         ## True
 if 'z' in dict:
     print(dict['z'])     ## Avoid KeyError
 print(dict.get('z'))  ## None (instead of KeyError)
+print(dict.get('w','w'))

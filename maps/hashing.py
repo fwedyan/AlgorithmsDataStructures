@@ -10,6 +10,6 @@ class Student:
     def __hash__(self):
         return hash((self.id, self.name))
 
-s = Student("83843","fadi")
+s = Student("078722","Edgar")
 print(hash(s.id))
 

@@ -1,5 +1,6 @@
 ####################################################################
-# A map with arrays as values. An element in the array can be reached using a key and index
+# A map with arrays as values. An element in the array can be reached 
+# using a key and index
 ####################################################################
 
 from maps.unsorted_table_map import UnsortedTableMap
@@ -44,27 +45,27 @@ class UnsortedMapOfLists(UnsortedTableMap):
             self._table.append(self._Item(key, head))
 
     def __delitem__(self, position: tuple):
-        """Remove item associated with key k and index, if index not given, remove the item (array)
+        """Remove item associated with key k and index, if index not given,
+        remove the item (array)
         associated with the key
           raise KeyError if not found
           raise IndexError if index out of bound
           """
         raise Exception("Implement me")
 
-
-
-m = UnsortedMapOfLists()
-m["a", 0] = 5
-m['a', 0] = 50
-m['a', 1] = 60
-m['b', 0] = 2
-m['c', 1] = 10
-m['d'] = [10, 20, 30]
-print(m['a', 0])
-print(m['a', 1])
-print(m['b', 0])
-print(m['a'])
-print(m['d'])
+if __name__ == '__main__':
+    m = UnsortedMapOfLists()
+    m["a", 0] = 5
+    m['a', 0] = 50
+    m['a', 1] = 60
+    m['b', 0] = 2
+    m['c', 1] = 10
+    m['d'] = [10, 20, 30]
+    print(m['a', 0])
+    print(m['a', 1])
+    print(m['b', 0])
+    print(m['a'])
+    print(m['d'])
 
 ### Test with the following after you implement the required methods
 #del m['b', 0]

@@ -13,6 +13,10 @@ dict2 = {'b': 3, 'c': 4}
 
 dict1.update(dict2)
 print(dict1)
+print("this what will happen if we update with an empty dict")
+dict3 = {}
+dict1.update(dict3)
+print(dict1)
 
 ''' update using key-value pairs'''
 dict1 = {'a': 1, 'b': 2}

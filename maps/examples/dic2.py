@@ -5,7 +5,7 @@ dict['a'] = 'zlpha'
 dict['g'] = 'gamma'
 dict['o'] = 'omega'
 
-for key in dict: print(key)
+#for key in dict: print(key)
 ## prints a g o
 
 ## Exactly the same as above
@@ -28,5 +28,5 @@ print(dict.items())  ##  [('a', 'alpha'), ('o', 'omega'), ('g', 'gamma')]
 ## This loop syntax accesses the whole dict by looping
 ## over the .items() tuple list, accessing one (key, value)
 ## pair on each iteration.
-for k, v in dict.items(): print(k, '>', v)
+for k, v in dict.items(): print(k, '-->', v)
 ## a > alpha    o > omega     g > gamma
